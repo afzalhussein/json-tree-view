@@ -55,7 +55,7 @@ function generateLi(title, contents){
 }
 
 
-function generateNested(title){
+function generateNestedNode(title){
     var newLi = document.createElement('li');
     newLi.className = 'li-wrapper';
 
@@ -78,27 +78,25 @@ function generateNested(title){
     return newLi;
 }
 
+
 function generateNode(obj, parentNode){
+    //loop through all props in an object
+    for (let key in obj) {
+        const value = obj[key];
 
-    //generate the LI
-
-    //see if we need to map more.. if so, call this recursively
-    _.map(obj, function(value, key) {
-        
-        // console.log('key', key, 'value', value, 'type', typeof value)
         if(typeof value === 'object' && !_.isEmpty(value)){
+            //if its an object, we need to recurse
 
-            const newNested = generateNested(key)
+            const newNested = generateNestedNode(key)
 
             const ul = parentNode.querySelector('ul')
 
-            if(ul){
+            if (ul){
                 ul.appendChild(newNested);
             } else {
                 parentNode.appendChild(newNested);
             }
             
-
             generateNode(value, newNested);
         } else {
             
@@ -109,8 +107,8 @@ function generateNode(obj, parentNode){
                 liValue = '(empty object)';
             }
             else if((value + '').trim() === ''){
+
                 liValue = '(empty string)'
-    
             } else{
                 liValue = value + '';
             }
@@ -120,14 +118,14 @@ function generateNode(obj, parentNode){
             const ul = parentNode.querySelector('ul')
 
 
-            if(ul){
+            if (ul){
                 ul.appendChild(newLi)
             } else {
                 parentNode.appendChild(newLi);
             }
 
         }
-    })
+    }
 }
 
 
