@@ -39,11 +39,6 @@ function hookUpEvent(element){
         clickedElement.classList.toggle('collapsed')
 
     });
-
-    //trying to add a copy thing
-    element.addEventListener('mouseenter', function(e){
-        console.log('mouseen')
-    })
 }
 
 function generateLi(title, contents){

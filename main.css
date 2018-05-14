@@ -23,11 +23,6 @@ ul.nested{
     padding: 2px 3px;
 }
 
-.li-title:hover:after{
-    content:'boop'
-}
-
-
 
 .clickable{
     cursor:pointer;
