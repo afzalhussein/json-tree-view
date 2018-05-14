@@ -1,0 +1,87 @@
+ul{
+    font-family:Courier;
+    list-style:none;
+
+
+}
+
+ul.nested{
+    border-left: 2px solid;
+    margin-left: 8px;
+    padding-left: 19px;
+
+    border-color:black;
+}
+
+
+
+.li-title{
+    font-weight:bold;
+    padding: 2px 3px;
+}
+.li-contents{
+    padding: 2px 3px;
+}
+
+.li-title:hover:after{
+    content:'boop'
+}
+
+
+
+.clickable{
+    cursor:pointer;
+}
+.li-title.clickable:before{
+    content: '-';
+    padding-right:2px;
+
+}
+.li-title.clickable.collapsed:before{
+    content: '+';
+}
+
+
+ul.nested.collapsed{
+    display: none;
+}
+
+
+
+/*
+    fun with nested borders
+
+*/
+.nested .nested{
+    border-color:blue;
+}
+.nested .nested .nested{
+    border-color:green;
+}
+.nested .nested .nested .nested{
+    border-color:red;
+}
+.nested .nested .nested .nested .nested{
+    border-color:darkgoldenrod;
+}
+.nested .nested .nested .nested .nested .nested{
+    border-color:lightseagreen;
+}
+.nested .nested .nested .nested .nested .nested .nested{
+    border-color: coral;
+}
+.nested .nested .nested .nested .nested .nested .nested .nested{
+    border-color: blue;
+}
+.nested .nested .nested .nested .nested .nested .nested .nested .nested{
+    border-color: green;
+}
+.nested .nested .nested .nested .nested .nested .nested .nested .nested .nested{
+    border-color: red;
+}
+.nested .nested .nested .nested .nested .nested .nested .nested .nested .nested .nested{
+    border-color: darkgoldenrod;
+}
+.nested .nested .nested .nested .nested .nested .nested .nested .nested .nested .nested .nested{
+    border-color: lightseagreen;
+}
